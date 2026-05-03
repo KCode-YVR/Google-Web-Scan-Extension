@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Google-Web-Scan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css"/>
+</head>    
+<body>
+    <header>
+        <div class="logo-row">
+            <span class="shield-icon">⬡</span>
+            <span class="app-title">Google-Web-Scan</span>
+        </div>
+        <p class="tagline">WHOIS Parser</p>
+    </header>
+
+    <section id="initial-state">
+        <div class="scan-illustration">
+            <div class="pulse-ring"></div>
+            <div class="pulse-ring-delay"></div>
+            <div class="scan-icon">🔍</div>
+        </div>
+        <p class="hint-text">Click below to scan the current tab's domain </p>
+        <button id="scan-button">
+            <span class="button-icon">▶</span> Run WHOIS Scan
+        </button>
+        <p id="status-msg" class="status-msg"></p>
+    </section>
+
+    <section id="result-state" class="hidden">
+
+        <div class="domain-row">
+            <span class="domain-label">Domain</span>
+            <span id="res-domain" class="domain-value"></span>
+        </div>
+
+        <div class="badge-row">
+            <div id="classifcation-badge" class="badge"></div>
+        </div>
+
+        <div class="score-section">
+            <div class="score-handler">
+                <span class="score-label">Risk Score</span>
+                <span id="score-value" class="score-number">0/100</span>
+            </div>
+            <div class="score-track">
+                <div id="score-bar" class="score-bar"></div>
+            </div>
+            <div class="score-legend">
+                <span>Safe</span>
+                <span>Suspicious</span>
+                <span>Unsafe</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                <span class="card-icon">📋</span> Analysis
+            </div>
+            <ul id="reasons-list" class="reasons-list"></ul>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                <span class="card-icon">📂</span> WHOIS Summary
+            </div>
+            <table class="whois-table">
+                <tbody>
+                <tr><td>Created</td><td id="ws-creation">—</td></tr>
+                <tr><td>Expires</td><td id="ws-expiration">—</td></tr>
+                <tr><td>Updated</td><td id="ws-updated">—</td></tr>
+                <tr><td>Registrar</td><td id="ws-registrar">—</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <button id="rescan-button" class="secondary-button">
+            ↺ Scan Another Page
+        </button>
+    
+    </section>
+
+    <script src="popup.js"></script>
+</body>
+</html>
