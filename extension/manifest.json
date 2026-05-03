@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "Google-Web-Scanner",
+    "version": "1.0.0",
+    "description": "WHOIIS-based website scanner. Classifies the domain as safe, suspicious, or unsafe",
+    "permissions": ["activeTab", "tabs"],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+
+        }
+    },
+    "icons": {
+
+    }
+}
