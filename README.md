@@ -58,7 +58,7 @@ google-web-scan/
 
 ```bash
 # Navigate to the backend folder
-cd google-web-scan/backend
+cd backend
 
 # (Recommended) Create a virtual environment
 python -m venv venv
