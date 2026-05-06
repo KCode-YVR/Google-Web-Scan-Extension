@@ -23,9 +23,9 @@ def scan():
             "classification": "suspicious",
             "risk_score": 50,
             "reasons": [
-                "WHOIS lookup faailed or returned no dataa.",
+                "WHOIS lookup failed or returned no data.",
                 whois_result.get("error", "Unknown error."),
-                "Caannot assess domain safety without WHOIS data.",
+                "Cannot assess domain safety without WHOIS data.",
             ],
             "whois_summary": {
                 "creation": "Unknown",

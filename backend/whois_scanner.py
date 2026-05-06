@@ -7,6 +7,7 @@ def _extract_domain(url_or_domain: str) -> str:
     domain = domain.split('/')[0]
     domain = domain.split('?')[0]
     domain = domain.split('#')[0]
+    domain = domain.split(':')[0]
     domain = re.sub(r'^www\.', '', domain, flags=re.IGNORECASE)
     return domain.strip().lower()
 

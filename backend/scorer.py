@@ -39,7 +39,7 @@ def _strip_tz(dt: datetime.datetime) -> datetime.datetime:
         dt = datetime.datetime(*dt[:6])
     return dt
 
-def _normalize_date(value: any) -> datetime.datetime | None:
+def _normalize_date(value: Any) -> datetime.datetime | None:
     if value is None: 
         return None
     if isinstance(value, list):
@@ -236,15 +236,15 @@ def score(whois_data: dict) -> dict:
     risk = min(risk, 100)
 
     if risk <= 15:
-        classfication = "safe"
+        classification = "safe"
     elif risk <= 45:
-        classificaation = "suspicious"
+        classification = "suspicious"
     else:
-        classfication = "unsafe"
+        classiification = "unsafe"
 
     return {
         "risk_score": risk,
-        "classification": classfication,
+        "classification": classification,
         "reasons": reasons,
         "whois_summary": whois_summary,
     }
