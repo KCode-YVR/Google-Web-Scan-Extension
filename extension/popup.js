@@ -16,7 +16,7 @@ const wsUpdated = document.getElementById("ws-updated");
 const wsRegistrar = document.getElementById("ws-registrar");
 
 function setStatus(msg) {
-    statusMsg.textContent(msg);
+    statusMsg.textContent = msg;
 }
 
 function setLoading(isLoading) {
@@ -44,7 +44,7 @@ function showResultState() {
 function extractDomain(url) {
     try {
         const u = new URL(url);
-        return u.hostname.replace(/^wwww\./, "");
+        return u.hostname.replace(/^www\./, "");
     } catch {
         return url;
     }
@@ -53,11 +53,11 @@ function extractDomain(url) {
 function renderBadge(classification) {
     const icons = {safe: "✔", suspicious: "⚠", unsafe: "✖"};
     const icon = icons[classification] || "?";
-    badge.textContent = '${icon} ${classification.toUpperCase()}'
-    badge.className = 'badge ${classification}';
+    badge.textContent = `${icon}  ${classification.toUpperCase()}`
+    badge.className = `badge ${classification}`;
 }
 
-function renderScoreBar(score, claassification) {
+function renderScoreBar(score, classification) {
     scoreVal.textContent = `${score}/100`;
     requestAnimationFrame(() => {
         setTimeout(() => {
@@ -69,7 +69,7 @@ function renderScoreBar(score, claassification) {
 
 function renderReasons(reasons) {
     reasonsList.innerHTML = "";
-    if (!reasons || reasons.length == 0) {
+    if (!reasons || reasons.length === 0) {
         const li = document.createElement("li");
         li.textContent = "No specific reasons returned.";
         reasonsList.appendChild(li);
@@ -82,7 +82,7 @@ function renderReasons(reasons) {
     }
 }
 
-function rednerWhoisSummary(summary) {
+function renderWhoisSummary(summary) {
     wsCreation.textContent   = summary.creation   || "Unknown";
     wsExpiration.textContent = summary.expiration || "Unknown";
     wsUpdated.textContent    = summary.updated    || "Unknown";
@@ -94,7 +94,7 @@ function renderResult(data) {
     renderBadge(data.classification);
     renderScoreBar(data.risk_score, data.classification);
     renderReasons(data.reasons);
-    rednerWhoisSummary(data.whois_summary);
+    renderWhoisSummary(data.whois_summary);
     showResultState();
 }
 

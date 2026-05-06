@@ -446,7 +446,7 @@ button:disabled {
 }
 
 /* Secondary button */
-.secondary-btn {
+.secondary-button {
   background: transparent !important;
   border: 1px solid var(--border) !important;
   color: var(--text-secondary) !important;
